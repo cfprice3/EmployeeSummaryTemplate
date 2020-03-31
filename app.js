@@ -1,3 +1,4 @@
+const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
@@ -10,8 +11,34 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 ​
 const render = require("./lib/htmlRenderer");
 ​
-​
 
+
+inquirer
+  .prompt([
+    {
+      type: "input",
+      message: "What is your name?",
+      name: "Name"
+    },
+    {
+        type: "input",
+        message: "What is your role?",
+        name: "Role"
+    },
+    {
+        type: "input",
+        message: "What is your ID?",
+        name: "ID"
+    },
+    {
+        type: "input",
+        message: "What is your office number (Mrg), GitHub name (Engineer), or School (Intern)?",
+        name: "Role-specific"
+    }
+  ])
+  .then(function(response) {
+    
+  });
 
 
 
