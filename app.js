@@ -72,7 +72,7 @@ function createTeam (){
         console.log("create an intern");
           break;
         default:
-        //   buildTeam();
+          buildTeam();
         console.log("buildteam");
         }
       });
@@ -145,7 +145,11 @@ function createEng(){
     };
 
 function buildTeam(){
-
+  if (!fs.existsSync(OUTPUT_DIR)){
+    fs.mkdirSync(OUTPUT_DIR);
+};
+  fs.writeFileSync(outputPath, render(team), "utf-8")
+  
 };
 
 createMgr();
